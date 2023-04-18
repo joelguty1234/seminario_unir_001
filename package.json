@@ -1,0 +1,29 @@
+{
+  "name": "recetas_scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./pdf-table-extractor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^6.9.5",
+    "axios": "^1.3.4",
+    "cheerio": "^1.0.0-rc.12",
+    "fs": "^0.0.1-security",
+    "json2csv": "^6.0.0-alpha.2",
+    "path": "^0.12.7",
+    "pdf-extraction": "^1.0.2",
+    "pdf-parse": "^1.1.1",
+    "pdf-table-extractor": "^1.0.3",
+    "pdf.js-extract": "^0.2.1",
+    "pdf2json": "^0.7.1",
+    "pdf2table": "^0.0.2",
+    "pdfjs-dist": "^1.5.446",
+    "pdfreader": "^3.0.0",
+    "request": "^2.88.2"
+  }
+}
