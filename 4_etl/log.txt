@@ -1,0 +1,32 @@
+root
+ |-- receta_name: string (nullable = true)
+ |-- ingredients_name: string (nullable = true)
+ |-- monto: double (nullable = true)
+ |-- ingredients_peso: string (nullable = true)
+
++--------------------+--------------------+-----+----------------+
+|         receta_name|    ingredients_name|monto|ingredients_peso|
++--------------------+--------------------+-----+----------------+
+| Setas a la mexicana|               Setas|300.0|          gramos|
+| Setas a la mexicana|             Nopales|300.0|          gramos|
+| Setas a la mexicana|                 Ajo|  1.0|          diente|
+| Setas a la mexicana|           Jitomates|  3.0|           pieza|
+| Setas a la mexicana|             Cebolla|  1.0|           pieza|
+| Setas a la mexicana|       Chile serrano|  1.0|           pieza|
+| Setas a la mexicana|            Cilantro|  5.0|           ramas|
+| Setas a la mexicana|         Mantequilla|  2.0|      cucharadas|
+| Setas a la mexicana|                 Sal|  0.0|           gusto|
+|Pasta al Chile Gu...|               Pasta|  2.0|        paquetes|
+|Pasta al Chile Gu...|    Chiles guajillos|  3.0|           pieza|
+|Pasta al Chile Gu...|     Aceite de oliva|  5.0|      cucharadas|
+|Pasta al Chile Gu...|                 Ajo|  3.0|         dientes|
+|Pasta al Chile Gu...|    Camarón mediano|300.0|          gramos|
+|Pasta al Chile Gu...|     Puré de tomate|  1.0|            taza|
+|Pasta al Chile Gu...|             Perejil|  2.0|      cucharadas|
+|Pasta al Chile Gu...|Queso parmesano o...|  0.5|            taza|
+|Champiñones rell...|Champiñones grandes|400.0|          gramos|
+|Champiñones rell...|                 Ajo|  2.0|         dientes|
+|Champiñones rell...|             Cebolla| 0.25|           pieza|
++--------------------+--------------------+-----+----------------+
+only showing top 20 rows
+
