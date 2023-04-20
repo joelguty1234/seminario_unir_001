@@ -105,4 +105,5 @@ dist
 
 
 4_etl/credenciales/
+2_recetas/run_test.js
 *.json
