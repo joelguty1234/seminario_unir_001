@@ -1,17 +1,82 @@
 root
- |-- _corrupt_record: string (nullable = true)
+ |-- Autoservicio_alto: string (nullable = true)
+ |-- Autoservicio_bajo: string (nullable = true)
+ |-- Ceda_alto: string (nullable = true)
+ |-- Ceda_bajo: string (nullable = true)
+ |-- Medida: string (nullable = true)
+ |-- Mercado_publico_alto: string (nullable = true)
+ |-- Mercado_publico_bajo: string (nullable = true)
+ |-- Mercado_ruedas_alto: string (nullable = true)
+ |-- Mercado_ruedas_bajo: string (nullable = true)
+ |-- Products: string (nullable = true)
 
-Traceback (most recent call last):
-  File "D:/4_PROOF_CONCEPT/3_MAESTRIA/maestria/seminario_unir_001/4_etl/etl2.py", line 21, in <module>
-    df.show(20)
-  File "D:\bigdata\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\sql\dataframe.py", line 484, in show
-  File "D:\bigdata\spark-3.1.2-bin-hadoop3.2\python\lib\py4j-0.10.9-src.zip\py4j\java_gateway.py", line 1305, in __call__
-  File "D:\bigdata\spark-3.1.2-bin-hadoop3.2\python\lib\pyspark.zip\pyspark\sql\utils.py", line 117, in deco
-pyspark.sql.utils.AnalysisException: Since Spark 2.3, the queries from raw JSON/CSV files are disallowed when the
-referenced columns only include the internal corrupt record column
-(named _corrupt_record by default). For example:
-spark.read.schema(schema).json(file).filter($"_corrupt_record".isNotNull).count()
-and spark.read.schema(schema).json(file).select("_corrupt_record").show().
-Instead, you can cache or save the parsed results and then send the same query.
-For example, val df = spark.read.schema(schema).json(file).cache() and then
-df.filter($"_corrupt_record".isNotNull).count().
++--------------------+--------------------+----------+--------------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+|   Autoservicio_alto|   Autoservicio_bajo| Ceda_alto|           Ceda_bajo|            Medida|Mercado_publico_alto|Mercado_publico_bajo| Mercado_ruedas_alto| Mercado_ruedas_bajo|            Products|
++--------------------+--------------------+----------+--------------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+|    $40.00 
+Chedraui|$37.90 Comercial ...|    $55.00|              $48.00|              1 Kg|      $52.00 Mirador|    $50.00 La Arenal|     $52.00 Ruta 
+08|      $40.00 Ruta 02|        Aceite Mixto|
+|$23.90 
+Comercial...|     $17.50 Wal-mart|    $26.00|              $16.00|              1 Kg|    $20.00 La Arenal|    $20.00 La Arenal|     $28.00 Ruta 
+08|      $25.00 Ruta 02|         Arroz largo|
+|$24.00 
+Comercial...|     $20.50 Wal-mart|    $23.00|              $22.00|              1 Kg|    $22.00 La Arenal|    $22.00 La Arenal|     $27.00 Ruta 
+02|      $26.00 Ruta 08|   Azúcar Estándar|
+|$15.90 
+Comercial...|     $10.00 Wal-mart|    $28.00|              $20.00|              1 Kg|    $20.00 La Arenal|      $19.00 Mirador|     $28.00 Ruta 
+02|      $26.00 Ruta 08|     Harina de Trigo|
+|    $45.00 
+Chedraui|     $33.00 Wal-mart|    $36.00|              $30.00|              1 Kg|    $40.00 La Arenal|    $40.00 La Arenal|     $38.00 Ruta 
+08|      $38.00 Ruta 08| Frijol Flor de Mayo|
+|    $25.00 
+Chedraui|$22.30 Comercial ...|    $30.00|              $28.00|              1 Kg|      $38.00 Mirador|$34.00 Martínez ...|     $48.00 Ruta 
+02|      $40.00 Ruta 08|        Frijol Negro|
+|$54.90 
+Comercial...|     $50.00 Wal-mart|    $50.00|              $17.00|              1 Kg|      $54.00 Mirador|    $50.00 La Arenal|     $59.00 Ruta 
+02|      $45.00 Ruta 08|        Huevo Blanco|
+|$222.70 
+Comercia...|    $119.00 Chedraui|   $175.00|             $135.00|              1 Kg|  $180.00 La 
+Arenal|  $180.00 La 
+Arenal|    $210.00 
+Ruta 02|     $185.00 Ruta 08|Carne Molida
+Sirl...|
+|$206.50 
+Comercia...|    $184.00 Wal-mart|   $175.00|             $144.00|              1 Kg|  $195.00 La 
+Arenal|$185.00 Martínez...|    $210.00 
+Ruta 02|     $185.00 Ruta 08|Bistec Diezmillo ...|
+|$65.90 
+Comercial...|     $59.90 Wal-mart|    $60.00|              $35.00|              1 Kg|    $65.00 La Arenal|$60.00 Martínez ...|     $50.00 Ruta 
+02|      $40.00 Ruta 08|       Aguacate Hass|
+|$68.50 
+Comercial...|     $49.90 Wal-mart|    $48.00|              $35.00|              1 Kg|    $25.00 La Arenal|      $20.00 Mirador|     $50.00 Ruta 
+08|      $35.00 Ruta 02|  Limón con semilla|
+|    $55.50 
+Chedraui|     $44.90 Wal-mart|    $40.00|              $18.00|              1 Kg|    $25.00 La Arenal|      $18.00 Mirador|     $25.00 Ruta 
+08|      $25.00 Ruta 08|             Guayaba|
+|$49.90 
+Comercial...|     $46.90 Wal-mart|    $50.00|              $40.00|              1 Kg|    $45.00 La Arenal|$40.00 Martínez ...|     $45.00 Ruta 
+02|      $35.00 Ruta 08|      Manzana Golden|
+|    $57.50 
+Chedraui|     $46.90 Wal-mart|    $55.00|              $40.00|              1 Kg|    $45.00 La Arenal|    $45.00 La Arenal|     $38.00 Ruta 
+02|      $35.00 Ruta 08|    Manzana Starking|
+|    $32.90 
+Chedraui|$14.90 Comercial ...|    $20.00|              $13.00|              1 Kg|    $20.00 La Arenal|      $18.00 Mirador|     $25.00 Ruta 
+02|      $15.00 Ruta 08|     Naranja mediana|
+|$29.90 
+Comercial...|     $26.90 Wal-mart|    $20.00|              $16.00|              1 Kg|      $25.00 Mirador|    $18.00 La Arenal|     $30.00 Ruta 
+02|      $25.00 Ruta 08|      Papaya maradol|
+|                    |Tienda de
+Autoser...|          |                ceda|Unidad 
+de 
+Medida|                    |  Mercados Públicos|                    |Mercado Sobre
+Ruedas|   Canales de Abasto|
+|+ Alto          +...|              + Bajo|+ Alto    |     + Bajo         |              1 Kg|  + Alto            |                    |+ Alto           ...|                    |                    |
+|    $21.50 
+Chedraui|$14.90 Comercial ...|    $15.00|               $9.00|              1 Kg|      $45.00 Mirador|    $35.00 La Arenal|     $45.00 Ruta 
+02|      $40.00 Ruta 08|               Piña|
+|    $23.20 
+Chedraui|$17.90 Comercial ...|    $22.00|              $20.00|              1 Kg|    $22.00 La Arenal|$20.00 Martínez ...|     $28.00 Ruta 
+02|      $20.00 Ruta 08|            Plátano|
++--------------------+--------------------+----------+--------------------+------------------+--------------------+--------------------+--------------------+--------------------+--------------------+
+only showing top 20 rows
+
