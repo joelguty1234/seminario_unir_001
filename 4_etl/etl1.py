@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split,col,explode,trim,regexp_replace,when
-# create a SparkSession
+from pyspark.sql.types import DecimalType
+
 spark = SparkSession.builder \
     .appName("Read JSON from GCS") \
     .config("spark.hadoop.fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem") \
@@ -52,7 +53,7 @@ df = df.select(
                 col("receta_name"),
                 col("ingredients_name"),
                 col("ingredients_value"),
-                col("ingredients_peso"),
+                trim(col("ingredients_peso")).alias("ingredients_peso"),
                 trim(col("entero")).cast("int").alias("entero"),
                 trim(col("decimal")).cast("int").alias("decimal"),
 )
@@ -64,18 +65,32 @@ df = df.select(
                 col("ingredients_name"),
                 when(
                     col("decimal")>0,(col("entero")/col("decimal"))
-                ).otherwise(col("entero")).alias("monto"),
+                ).otherwise(col("entero")).cast(DecimalType(10, 2)).alias("monto"),
                 when(
                     col("ingredients_peso") == "de",
                     "pieza")
                 .when(
-                    col("ingredients_peso") == "piezas",
-                    "pieza")
+                    col("ingredients_peso").like("piez%"),
+                    "unidad")
                 .otherwise(col("ingredients_peso")).alias("ingredients_peso")
 )
 
+df = df.select(
+    col("receta_name"),
+    col("ingredients_name"),
+    col("monto"),
+    when(col("ingredients_peso") == "pieza","unidad")
+    .when(col("ingredients_peso") == "latas","unidad")
+    .when(col("ingredients_peso") == "lata","unidad")
+    .when(col("ingredients_peso") == "ramas","unidad")
+    .when(col("ingredients_peso") == "paquetes","unidad")
+    .when(col("ingredients_peso") == "gusto","cucharadita")
+    .otherwise(col("ingredients_peso")).alias("ingredients_peso")
+)
+
+
 # show the first 20 rows of the DataFrame
 df.printSchema()
-df.show(20)
+df.show(80)
 
 spark.stop()

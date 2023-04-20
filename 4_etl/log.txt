@@ -1,39 +1,92 @@
 root
- |-- Products: string (nullable = true)
- |-- Autoservicio_bajo: string (nullable = true)
- |-- Autoservicio_alto: string (nullable = true)
- |-- Mercado_ruedas_bajo: string (nullable = true)
- |-- Mercado_ruedas_alto: string (nullable = true)
- |-- Mercado_publico_bajo: string (nullable = true)
- |-- Mercado_publico_alto: string (nullable = true)
- |-- Ceda_bajo: string (nullable = true)
- |-- Ceda_alto: string (nullable = true)
- |-- Medida: string (nullable = true)
+ |-- receta_name: string (nullable = true)
+ |-- ingredients_name: string (nullable = true)
+ |-- monto: decimal(10,2) (nullable = true)
+ |-- ingredients_peso: string (nullable = true)
 
-+--------------------+-----------------+-----------------+-------------------+-------------------+--------------------+--------------------+---------+---------+------+
-|            Products|Autoservicio_bajo|Autoservicio_alto|Mercado_ruedas_bajo|Mercado_ruedas_alto|Mercado_publico_bajo|Mercado_publico_alto|Ceda_bajo|Ceda_alto|Medida|
-+--------------------+-----------------+-----------------+-------------------+-------------------+--------------------+--------------------+---------+---------+------+
-|        Aceite Mixto|           $37.90|           $40.00|             $40.00|             $52.00|              $50.00|              $52.00|   $48.00|   $55.00|  1 Kg|
-|         Arroz largo|           $17.50|           $23.90|             $25.00|             $28.00|              $20.00|              $20.00|   $16.00|   $26.00|  1 Kg|
-|   Azúcar Estándar|           $20.50|           $24.00|             $26.00|             $27.00|              $22.00|              $22.00|   $22.00|   $23.00|  1 Kg|
-|     Harina de Trigo|           $10.00|           $15.90|             $26.00|             $28.00|              $19.00|              $20.00|   $20.00|   $28.00|  1 Kg|
-| Frijol Flor de Mayo|           $33.00|           $45.00|             $38.00|             $38.00|              $40.00|              $40.00|   $30.00|   $36.00|  1 Kg|
-|        Frijol Negro|           $22.30|           $25.00|             $40.00|             $48.00|              $34.00|              $38.00|   $28.00|   $30.00|  1 Kg|
-|        Huevo Blanco|           $50.00|           $54.90|             $45.00|             $59.00|              $50.00|              $54.00|   $17.00|   $50.00|  1 Kg|
-|Carne Molida
-Sirl...|          $119.00|          $222.70|            $185.00|            $210.00|             $180.00|             $180.00|  $135.00|  $175.00|  1 Kg|
-|Bistec Diezmillo ...|          $184.00|          $206.50|            $185.00|            $210.00|             $185.00|             $195.00|  $144.00|  $175.00|  1 Kg|
-|       Aguacate Hass|           $59.90|           $65.90|             $40.00|             $50.00|              $60.00|              $65.00|   $35.00|   $60.00|  1 Kg|
-|  Limón con semilla|           $49.90|           $68.50|             $35.00|             $50.00|              $20.00|              $25.00|   $35.00|   $48.00|  1 Kg|
-|             Guayaba|           $44.90|           $55.50|             $25.00|             $25.00|              $18.00|              $25.00|   $18.00|   $40.00|  1 Kg|
-|      Manzana Golden|           $46.90|           $49.90|             $35.00|             $45.00|              $40.00|              $45.00|   $40.00|   $50.00|  1 Kg|
-|    Manzana Starking|           $46.90|           $57.50|             $35.00|             $38.00|              $45.00|              $45.00|   $40.00|   $55.00|  1 Kg|
-|     Naranja mediana|           $14.90|           $32.90|             $15.00|             $25.00|              $18.00|              $20.00|   $13.00|   $20.00|  1 Kg|
-|      Papaya maradol|           $26.90|           $29.90|             $25.00|             $30.00|              $18.00|              $25.00|   $16.00|   $20.00|  1 Kg|
-|               Piña|           $14.90|           $21.50|             $40.00|             $45.00|              $35.00|              $45.00|    $9.00|   $15.00|  1 Kg|
-|            Plátano|           $17.90|           $23.20|             $20.00|             $28.00|              $20.00|              $22.00|   $20.00|   $22.00|  1 Kg|
-|             Sandía|           $14.90|           $15.20|             $20.00|             $25.00|              $18.00|              $20.00|   $10.00|   $12.00|  1 Kg|
-| Calabacita Italiana|           $22.80|           $38.90|             $14.00|             $20.00|              $16.00|              $20.00|    $8.00|   $20.00|  1 Kg|
-+--------------------+-----------------+-----------------+-------------------+-------------------+--------------------+--------------------+---------+---------+------+
-only showing top 20 rows
++--------------------+--------------------+------+----------------+
+|         receta_name|    ingredients_name| monto|ingredients_peso|
++--------------------+--------------------+------+----------------+
+| Setas a la mexicana|               Setas|300.00|          gramos|
+| Setas a la mexicana|             Nopales|300.00|          gramos|
+| Setas a la mexicana|                 Ajo|  1.00|          diente|
+| Setas a la mexicana|           Jitomates|  3.00|          unidad|
+| Setas a la mexicana|             Cebolla|  1.00|          unidad|
+| Setas a la mexicana|       Chile serrano|  1.00|          unidad|
+| Setas a la mexicana|            Cilantro|  5.00|          unidad|
+| Setas a la mexicana|         Mantequilla|  2.00|      cucharadas|
+| Setas a la mexicana|                 Sal|  0.00|     cucharadita|
+|Pasta al Chile Gu...|               Pasta|  2.00|          unidad|
+|Pasta al Chile Gu...|    Chiles guajillos|  3.00|          unidad|
+|Pasta al Chile Gu...|     Aceite de oliva|  5.00|      cucharadas|
+|Pasta al Chile Gu...|                 Ajo|  3.00|         dientes|
+|Pasta al Chile Gu...|    Camarón mediano|300.00|          gramos|
+|Pasta al Chile Gu...|     Puré de tomate|  1.00|            taza|
+|Pasta al Chile Gu...|             Perejil|  2.00|      cucharadas|
+|Pasta al Chile Gu...|Queso parmesano o...|  0.50|            taza|
+|Champiñones rell...|Champiñones grandes|400.00|          gramos|
+|Champiñones rell...|                 Ajo|  2.00|         dientes|
+|Champiñones rell...|             Cebolla|  0.25|          unidad|
+|Champiñones rell...|               Crema|  2.00|      cucharadas|
+|Champiñones rell...|     Queso parmesano| 50.00|          gramos|
+|Champiñones rell...|                 Sal|  0.00|     cucharadita|
+|Champiñones rell...|Pimienta negra mo...|  0.00|     cucharadita|
+|Champiñones rell...|         Mantequilla|  1.00|       cucharada|
+|Champiñones rell...|            Espinaca|  1.00|          manojo|
+|Champiñones rell...|            Jitomate|  1.00|          unidad|
+|Champiñones rell...|    Nueces en trozos|  0.00|     cucharadita|
+|Pastes de Papa co...|Pimienta negra mo...|  0.00|     cucharadita|
+|Pastes de Papa co...|               Leche|  1.00|            taza|
+|Pastes de Papa co...|  Polvo para hornear|  3.00|    cucharaditas|
+|Pastes de Papa co...|               Huevo|  1.00|          unidad|
+|Pastes de Papa co...|       Chile serrano|  3.00|          unidad|
+|Pastes de Papa co...|             Perejil|  0.25|          unidad|
+|Pastes de Papa co...|                 Sal|  0.00|     cucharadita|
+|Pastes de Papa co...|     Harina de trigo|  4.00|           tazas|
+|Pastes de Papa co...|                 Sal|  1.00|     cucharadita|
+|Pastes de Papa co...|        Carne molida|  0.50|            kilo|
+|Pastes de Papa co...|     Manteca vegetal|  0.50|            taza|
+|Pastes de Papa co...|                Poro|  0.50|          unidad|
+|Pastes de Papa co...|         Papa blanca|  2.00|          unidad|
+|Chicharrón en Sa...|Chicharrón de cerdo|100.00|          gramos|
+|Chicharrón en Sa...|           Jitomates|  9.00|          unidad|
+|Chicharrón en Sa...|           Chipotles|  1.00|          unidad|
+|Chicharrón en Sa...|                 Ajo|  2.00|         dientes|
+|Chicharrón en Sa...|      Caldo de pollo|  0.50|            cubo|
+|Chicharrón en Sa...|             Azúcar|  1.00|     cucharadita|
+|Pimientos Relleno...|                 Sal|  1.00|       cucharada|
+|Pimientos Relleno...|           Pimientos|  4.00|          unidad|
+|Pimientos Relleno...|     Aceite de oliva|  1.00|       cucharada|
+|Pimientos Relleno...|             Cebolla|  1.00|          unidad|
+|Pimientos Relleno...|        Arroz cocido|  2.00|           tazas|
+|Pimientos Relleno...|     Frijoles negros|400.00|          gramos|
+|Pimientos Relleno...|           Jitomates|400.00|          gramos|
+|Pimientos Relleno...|      Chile en polvo|  1.00|     cucharadita|
+|Pimientos Relleno...|          Sal de ajo|  1.00|     cucharadita|
+|Pimientos Relleno...|       Comino molido|  0.50|     cucharadita|
+|Pimientos Relleno...|                 Sal|  0.50|     cucharadita|
+|Pimientos Relleno...|Queso cotija rallado|225.00|          gramos|
+|     Asado de Puerco|      Chile Guajillo|  6.00|          unidad|
+|     Asado de Puerco|                 Ajo|  3.00|         dientes|
+|     Asado de Puerco|      Carne de cerdo|  0.75|          unidad|
+|     Asado de Puerco|              Laurel|  1.00|            hoja|
+|     Asado de Puerco|       Comino molido|  0.50|     cucharadita|
+|     Asado de Puerco|       Orégano seco|  1.00|     cucharadita|
+|     Asado de Puerco|                 Sal|  0.00|     cucharadita|
+|     Asado de Puerco|Pimienta negra mo...|  0.00|     cucharadita|
+|Albóndigas en Sa...|Carne de res o ce...|  0.00|            kilo|
+|Albóndigas en Sa...|                 Ajo|  1.00|          diente|
+|Albóndigas en Sa...|            Jitomate|  5.00|          unidad|
+|Albóndigas en Sa...|             Cebolla|  0.25|          unidad|
+|Albóndigas en Sa...|         Hierbabuena|  4.00|           hojas|
+|Albóndigas en Sa...|Arroz cocido al v...|  1.00|            taza|
+|Albóndigas en Sa...|                Agua|  0.00|            null|
+|Albóndigas en Sa...|             Bolillo|  0.50|          unidad|
+|Albóndigas en Sa...|           Jitomates|  6.00|          unidad|
+|Albóndigas en Sa...|             Cebolla|  0.25|          unidad|
+|Albóndigas en Sa...|                 Ajo|  1.00|          diente|
+|Albóndigas en Sa...|       Chiles morita|  2.00|          unidad|
+|Albóndigas en Sa...|                Agua|  0.50|           litro|
++--------------------+--------------------+------+----------------+
+only showing top 80 rows
 

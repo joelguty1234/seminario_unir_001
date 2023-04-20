@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import split,col,explode,trim,regexp_replace,when,from_json
-from pyspark.sql.types import ArrayType, StructField, StringType, StructType
+from pyspark.sql.types import DecimalType
 
 # create a SparkSession
 spark = SparkSession.builder \
@@ -44,6 +44,18 @@ df = df.select(
 ).filter(col("Products") != "Canales de Abasto") \
 .filter(col("Products") != "")
 
+df = df.select(
+    col("Products"),
+    regexp_replace('Ceda_bajo', '\\$', '').alias("Ceda_bajo"),
+    regexp_replace('Ceda_alto', '\\$', '').alias("Ceda_alto"),
+    trim(col("Medida")).alias("Medida"),
+)
+
+df = df.select(
+    col("Products"),
+    trim(col("Ceda_bajo")).cast(DecimalType(10, 2)).alias("Ceda_bajo"),
+    trim(col("Ceda_alto")).cast(DecimalType(10, 2)).alias("Ceda_alto"),                          
+)
 
 df.printSchema()
 df.show()
