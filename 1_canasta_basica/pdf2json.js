@@ -27,6 +27,7 @@ function success(result) {
     }
   }
   const json = JSON.stringify(allTables);
+
   fs.writeFile(`./jsonfile/${pdfFiles}.json`, json, (err) => {
     if (err) {
       console.error('Error writing to file: ', err);

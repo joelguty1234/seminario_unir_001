@@ -8,26 +8,12 @@ const storage = new Storage();
 // Set the name of the bucket you want to upload the file to
 const bucketName = 'test_yaku_001';
 
-function getPDFFiles(directoryPath) {
-    const pdfFiles = [];
-  
-    fs.readdirSync(directoryPath).forEach(function(file) {
-      if (path.extname(file) === '.pdf') {
-        const filenameWithoutExt = path.basename(file, '.pdf');
-        pdfFiles.push(filenameWithoutExt);
-      }
-    });
-  
-    return pdfFiles;
-  }
-  
-  let pdfFiles = getPDFFiles('./pdfs_local')[0];
 
 // Set the path to the JSON file on your local machine
-const localFilePath = `./jsonfile/final_productos.json`;
+const localFilePath = `./recipes.json`;
 
 // Set the destination name for the file in Google Cloud Storage
-const destinationName = `seminario_001/final_productos.json`;
+const destinationName = `seminario_001/recipes.json`;
 
 // Get a reference to the bucket
 const bucket = storage.bucket(bucketName);

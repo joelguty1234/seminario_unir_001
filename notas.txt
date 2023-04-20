@@ -1,2 +1,6 @@
 npm init --y
 npm install axios cheerio json2csv request, pdf-parse
+
+PYSPARK_PYTHON="C:\Users\joelhome\AppData\Local\Programs\Python\Python37\python.exe" \
+"C:\Program Files\Java\jdk1.8.0_281\bin\java" -cp "D:\bigdata\spark-3.1.2-bin-hadoop3.2/conf\;D:\bigdata\spark-3.1.2-bin-hadoop3.2\jars\*" \
+-Xmx1g org.apache.spark.deploy.SparkSubmit --master local[*] etl1.py > log.txt
