@@ -1,92 +1,93 @@
 root
- |-- receta_name: string (nullable = true)
- |-- ingredients_name: string (nullable = true)
+ |-- Receta: string (nullable = true)
+ |-- Personas: integer (nullable = true)
+ |-- Ingrediente: string (nullable = true)
  |-- monto: decimal(10,2) (nullable = true)
- |-- ingredients_peso: string (nullable = true)
+ |-- Unidad: string (nullable = true)
 
-+--------------------+--------------------+------+----------------+
-|         receta_name|    ingredients_name| monto|ingredients_peso|
-+--------------------+--------------------+------+----------------+
-| Setas a la mexicana|               Setas|300.00|          gramos|
-| Setas a la mexicana|             Nopales|300.00|          gramos|
-| Setas a la mexicana|                 Ajo|  1.00|          diente|
-| Setas a la mexicana|           Jitomates|  3.00|          unidad|
-| Setas a la mexicana|             Cebolla|  1.00|          unidad|
-| Setas a la mexicana|       Chile serrano|  1.00|          unidad|
-| Setas a la mexicana|            Cilantro|  5.00|          unidad|
-| Setas a la mexicana|         Mantequilla|  2.00|      cucharadas|
-| Setas a la mexicana|                 Sal|  0.00|     cucharadita|
-|Pasta al Chile Gu...|               Pasta|  2.00|          unidad|
-|Pasta al Chile Gu...|    Chiles guajillos|  3.00|          unidad|
-|Pasta al Chile Gu...|     Aceite de oliva|  5.00|      cucharadas|
-|Pasta al Chile Gu...|                 Ajo|  3.00|         dientes|
-|Pasta al Chile Gu...|    Camarón mediano|300.00|          gramos|
-|Pasta al Chile Gu...|     Puré de tomate|  1.00|            taza|
-|Pasta al Chile Gu...|             Perejil|  2.00|      cucharadas|
-|Pasta al Chile Gu...|Queso parmesano o...|  0.50|            taza|
-|Champiñones rell...|Champiñones grandes|400.00|          gramos|
-|Champiñones rell...|                 Ajo|  2.00|         dientes|
-|Champiñones rell...|             Cebolla|  0.25|          unidad|
-|Champiñones rell...|               Crema|  2.00|      cucharadas|
-|Champiñones rell...|     Queso parmesano| 50.00|          gramos|
-|Champiñones rell...|                 Sal|  0.00|     cucharadita|
-|Champiñones rell...|Pimienta negra mo...|  0.00|     cucharadita|
-|Champiñones rell...|         Mantequilla|  1.00|       cucharada|
-|Champiñones rell...|            Espinaca|  1.00|          manojo|
-|Champiñones rell...|            Jitomate|  1.00|          unidad|
-|Champiñones rell...|    Nueces en trozos|  0.00|     cucharadita|
-|Pastes de Papa co...|Pimienta negra mo...|  0.00|     cucharadita|
-|Pastes de Papa co...|               Leche|  1.00|            taza|
-|Pastes de Papa co...|  Polvo para hornear|  3.00|    cucharaditas|
-|Pastes de Papa co...|               Huevo|  1.00|          unidad|
-|Pastes de Papa co...|       Chile serrano|  3.00|          unidad|
-|Pastes de Papa co...|             Perejil|  0.25|          unidad|
-|Pastes de Papa co...|                 Sal|  0.00|     cucharadita|
-|Pastes de Papa co...|     Harina de trigo|  4.00|           tazas|
-|Pastes de Papa co...|                 Sal|  1.00|     cucharadita|
-|Pastes de Papa co...|        Carne molida|  0.50|            kilo|
-|Pastes de Papa co...|     Manteca vegetal|  0.50|            taza|
-|Pastes de Papa co...|                Poro|  0.50|          unidad|
-|Pastes de Papa co...|         Papa blanca|  2.00|          unidad|
-|Chicharrón en Sa...|Chicharrón de cerdo|100.00|          gramos|
-|Chicharrón en Sa...|           Jitomates|  9.00|          unidad|
-|Chicharrón en Sa...|           Chipotles|  1.00|          unidad|
-|Chicharrón en Sa...|                 Ajo|  2.00|         dientes|
-|Chicharrón en Sa...|      Caldo de pollo|  0.50|            cubo|
-|Chicharrón en Sa...|             Azúcar|  1.00|     cucharadita|
-|Pimientos Relleno...|                 Sal|  1.00|       cucharada|
-|Pimientos Relleno...|           Pimientos|  4.00|          unidad|
-|Pimientos Relleno...|     Aceite de oliva|  1.00|       cucharada|
-|Pimientos Relleno...|             Cebolla|  1.00|          unidad|
-|Pimientos Relleno...|        Arroz cocido|  2.00|           tazas|
-|Pimientos Relleno...|     Frijoles negros|400.00|          gramos|
-|Pimientos Relleno...|           Jitomates|400.00|          gramos|
-|Pimientos Relleno...|      Chile en polvo|  1.00|     cucharadita|
-|Pimientos Relleno...|          Sal de ajo|  1.00|     cucharadita|
-|Pimientos Relleno...|       Comino molido|  0.50|     cucharadita|
-|Pimientos Relleno...|                 Sal|  0.50|     cucharadita|
-|Pimientos Relleno...|Queso cotija rallado|225.00|          gramos|
-|     Asado de Puerco|      Chile Guajillo|  6.00|          unidad|
-|     Asado de Puerco|                 Ajo|  3.00|         dientes|
-|     Asado de Puerco|      Carne de cerdo|  0.75|          unidad|
-|     Asado de Puerco|              Laurel|  1.00|            hoja|
-|     Asado de Puerco|       Comino molido|  0.50|     cucharadita|
-|     Asado de Puerco|       Orégano seco|  1.00|     cucharadita|
-|     Asado de Puerco|                 Sal|  0.00|     cucharadita|
-|     Asado de Puerco|Pimienta negra mo...|  0.00|     cucharadita|
-|Albóndigas en Sa...|Carne de res o ce...|  0.00|            kilo|
-|Albóndigas en Sa...|                 Ajo|  1.00|          diente|
-|Albóndigas en Sa...|            Jitomate|  5.00|          unidad|
-|Albóndigas en Sa...|             Cebolla|  0.25|          unidad|
-|Albóndigas en Sa...|         Hierbabuena|  4.00|           hojas|
-|Albóndigas en Sa...|Arroz cocido al v...|  1.00|            taza|
-|Albóndigas en Sa...|                Agua|  0.00|            null|
-|Albóndigas en Sa...|             Bolillo|  0.50|          unidad|
-|Albóndigas en Sa...|           Jitomates|  6.00|          unidad|
-|Albóndigas en Sa...|             Cebolla|  0.25|          unidad|
-|Albóndigas en Sa...|                 Ajo|  1.00|          diente|
-|Albóndigas en Sa...|       Chiles morita|  2.00|          unidad|
-|Albóndigas en Sa...|                Agua|  0.50|           litro|
-+--------------------+--------------------+------+----------------+
++--------------------+--------+--------------------+------+------------+
+|              Receta|Personas|         Ingrediente| monto|      Unidad|
++--------------------+--------+--------------------+------+------------+
+|Setas a la mexica...|       4|               Setas|300.00|      gramos|
+|Setas a la mexica...|       4|             Nopales|300.00|      gramos|
+|Setas a la mexica...|       4|                 Ajo|  1.00|      diente|
+|Setas a la mexica...|       4|           Jitomates|  3.00|      piezas|
+|Setas a la mexica...|       4|             Cebolla|  1.00|       pieza|
+|Setas a la mexica...|       4|       Chile serrano|  1.00|       pieza|
+|Setas a la mexica...|       4|            Cilantro|  5.00|       ramas|
+|Setas a la mexica...|       4|         Mantequilla|  2.00|  cucharadas|
+|Setas a la mexica...|       4|                 Sal|  1.00|       gusto|
+|Pasta al Chile Gu...|       6|    Chiles guajillos|  3.00|      piezas|
+|Pasta al Chile Gu...|       6|     Aceite de oliva|  5.00|  cucharadas|
+|Pasta al Chile Gu...|       6|                 Ajo|  3.00|     dientes|
+|Pasta al Chile Gu...|       6|             Perejil|  2.00|  cucharadas|
+|Pasta al Chile Gu...|       6|Queso parmesano o...|  0.50|        taza|
+|Champiñones rell...|       6|                 Ajo|  2.00|     dientes|
+|Champiñones rell...|       6|             Cebolla|  0.25|       pieza|
+|Champiñones rell...|       6|               Crema|  2.00|  cucharadas|
+|Champiñones rell...|       6|     Queso parmesano| 50.00|      gramos|
+|Champiñones rell...|       6|                 Sal|  1.00|       gusto|
+|Champiñones rell...|       6|Pimienta negra mo...|  1.00|       gusto|
+|Champiñones rell...|       6|         Mantequilla|  1.00|   cucharada|
+|Champiñones rell...|       6|            Espinaca|  1.00|      manojo|
+|Champiñones rell...|       6|            Jitomate|  1.00|       pieza|
+|Champiñones rell...|       6|    Nueces en trozos|  1.00|       gusto|
+|Pastes de Papa co...|       8|Pimienta negra mo...|  1.00|       gusto|
+|Pastes de Papa co...|       8|               Leche|  1.00|        taza|
+|Pastes de Papa co...|       8|  Polvo para hornear|  3.00|cucharaditas|
+|Pastes de Papa co...|       8|               Huevo|  1.00|       pieza|
+|Pastes de Papa co...|       8|       Chile serrano|  3.00|      piezas|
+|Pastes de Papa co...|       8|                 Sal|  1.00|       gusto|
+|Pastes de Papa co...|       8|     Harina de trigo|  4.00|       tazas|
+|Pastes de Papa co...|       8|                 Sal|  1.00| cucharadita|
+|Pastes de Papa co...|       8|        Carne molida|  0.50|        kilo|
+|Pastes de Papa co...|       8|     Manteca vegetal|  0.50|        taza|
+|Pastes de Papa co...|       8|                Poro|  0.50|       pieza|
+|Pastes de Papa co...|       8|         Papa blanca|  2.00|      piezas|
+|Chicharrón en Sa...|       4|           Jitomates|  9.00|      piezas|
+|Chicharrón en Sa...|       4|                 Ajo|  2.00|     dientes|
+|Chicharrón en Sa...|       4|      Caldo de pollo|  0.50|        cubo|
+|Pimientos Relleno...|       4|                 Sal|  1.00|   cucharada|
+|Pimientos Relleno...|       4|           Pimientos|  4.00|      piezas|
+|Pimientos Relleno...|       4|     Aceite de oliva|  1.00|   cucharada|
+|Pimientos Relleno...|       4|             Cebolla|  1.00|       pieza|
+|Pimientos Relleno...|       4|        Arroz cocido|  2.00|       tazas|
+|Pimientos Relleno...|       4|     Frijoles negros|400.00|      gramos|
+|Pimientos Relleno...|       4|           Jitomates|400.00|      gramos|
+|Pimientos Relleno...|       4|      Chile en polvo|  1.00| cucharadita|
+|Pimientos Relleno...|       4|          Sal de ajo|  1.00| cucharadita|
+|Pimientos Relleno...|       4|       Comino molido|  0.50| cucharadita|
+|Pimientos Relleno...|       4|                 Sal|  0.50| cucharadita|
+|Pimientos Relleno...|       4|Queso cotija rallado|225.00|      gramos|
+|Asado de Puerco. ...|       6|      Chile Guajillo|  6.00|      piezas|
+|Asado de Puerco. ...|       6|                 Ajo|  3.00|     dientes|
+|Asado de Puerco. ...|       6|      Carne de cerdo|  0.75|        kilo|
+|Asado de Puerco. ...|       6|              Laurel|  1.00|        hoja|
+|Asado de Puerco. ...|       6|       Comino molido|  0.50| cucharadita|
+|Asado de Puerco. ...|       6|                 Sal|  1.00|       gusto|
+|Asado de Puerco. ...|       6|Pimienta negra mo...|  1.00|       gusto|
+|Albóndigas en Sa...|       4|                 Ajo|  1.00|      diente|
+|Albóndigas en Sa...|       4|            Jitomate|  5.00|      piezas|
+|Albóndigas en Sa...|       4|             Cebolla|  0.25|       pieza|
+|Albóndigas en Sa...|       4|         Hierbabuena|  4.00|       hojas|
+|Albóndigas en Sa...|       4|Arroz cocido al v...|  1.00|        taza|
+|Albóndigas en Sa...|       4|             Bolillo|  0.50|       pieza|
+|Albóndigas en Sa...|       4|           Jitomates|  6.00|      piezas|
+|Albóndigas en Sa...|       4|             Cebolla|  0.25|       pieza|
+|Albóndigas en Sa...|       4|                 Ajo|  1.00|      diente|
+|Albóndigas en Sa...|       4|       Chiles morita|  2.00|      piezas|
+|Albóndigas en Sa...|       4|                Agua|  0.50|       litro|
+|Albóndigas en Sa...|       4|              Aceite|  1.00|   cucharada|
+|Albóndigas en Sa...|       4|                 Sal|  1.00|       gusto|
+|Albóndigas en Sa...|       4|            Pimienta|  1.00|       gusto|
+|Quinoa a la Mexic...|       6|     Aceite de oliva|  1.00|   cucharada|
+|Quinoa a la Mexic...|       6|                 Ajo|  2.00|     dientes|
+|Quinoa a la Mexic...|       6|            Jitomate|  0.50|        kilo|
+|Quinoa a la Mexic...|       6|       Chiles verdes|  1.00|       gusto|
+|Quinoa a la Mexic...|       6|    Frijoles cocidos|  1.00|        lata|
+|Quinoa a la Mexic...|       6|              Comino|  0.50| cucharadita|
+|Quinoa a la Mexic...|       6|             Cebolla|  0.25|       pieza|
+|Quinoa a la Mexic...|       6|                 Sal|  1.00| cucharadita|
++--------------------+--------+--------------------+------+------------+
 only showing top 80 rows
 

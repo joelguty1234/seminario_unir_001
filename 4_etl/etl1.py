@@ -15,77 +15,42 @@ file_path = "gs://test_yaku_001/seminario_001/recipes.json"
 df = spark.read.option("multiline",True) \
         .option("encoding", "ISO-8859-1") \
         .json(file_path)
-
+        
 df = df.select(
-                split(df["title"], "\\.")[0].alias("receta_name"),
-                explode(df["ingredients"]).alias("ingredients")
+    trim(col("Receta")).alias("Receta"),
+    trim(col("Personas")).cast("int").alias("Personas"),
+    explode(col("Ingredientes")).alias("Ingredientes"),
 )
 
 df = df.select(
-                col("receta_name"),
-                split(df["ingredients"], "\\-")[0].alias("ingredients_name"),
-                split(df["ingredients"], "\\-")[1].alias("ingredients_value")
+    trim(col("Receta")).alias("Receta"),
+    trim(col("Personas")).cast("int").alias("Personas"),
+    trim(col("Ingredientes.Nombre")).alias("Ingrediente"),
+    trim(col("Ingredientes.Cantidad")).alias("Cantidad"),
+    trim(col("Ingredientes.Unidad")).alias("Unidad")
 )
 
 df = df.select(
-                trim(col("receta_name")).alias("receta_name"),
-                trim(col("ingredients_name")).alias("ingredients_name"),
-                trim(col("ingredients_value")).alias("ingredients_value"),
-)
-
-df = df.select(
-                col("receta_name"),
-                col("ingredients_name"),
-                split(df["ingredients_value"], "\\ ")[0].alias("ingredients_value"),
-                split(df["ingredients_value"], "\\ ")[1].alias("ingredients_peso")
-)
-
-df = df.select(
-                col("receta_name"),
-                col("ingredients_name"),
-                trim(col("ingredients_value")).alias("ingredients_value"),
-                trim(col("ingredients_peso")).alias("ingredients_peso"),
-                split(df["ingredients_value"], "\\/")[0].alias("entero"),
-                split(df["ingredients_value"], "\\/")[1].alias("decimal"),
-)
-
-df = df.select(
-                col("receta_name"),
-                col("ingredients_name"),
-                col("ingredients_value"),
-                trim(col("ingredients_peso")).alias("ingredients_peso"),
-                trim(col("entero")).cast("int").alias("entero"),
-                trim(col("decimal")).cast("int").alias("decimal"),
+    col("Receta"),
+    col("Personas"),
+    col("Ingrediente"),
+    col("Cantidad"),
+    col("Unidad"),
+    split(df["Cantidad"], "\\/")[0].cast("int").alias("entero"),
+    split(df["Cantidad"], "\\/")[1].cast("int").alias("decimal"),
 )
 
 df = df.fillna(0, subset=["entero","decimal"])
 
-df = df.select(
-                col("receta_name"),
-                col("ingredients_name"),
-                when(
-                    col("decimal")>0,(col("entero")/col("decimal"))
-                ).otherwise(col("entero")).cast(DecimalType(10, 2)).alias("monto"),
-                when(
-                    col("ingredients_peso") == "de",
-                    "pieza")
-                .when(
-                    col("ingredients_peso").like("piez%"),
-                    "unidad")
-                .otherwise(col("ingredients_peso")).alias("ingredients_peso")
-)
 
 df = df.select(
-    col("receta_name"),
-    col("ingredients_name"),
-    col("monto"),
-    when(col("ingredients_peso") == "pieza","unidad")
-    .when(col("ingredients_peso") == "latas","unidad")
-    .when(col("ingredients_peso") == "lata","unidad")
-    .when(col("ingredients_peso") == "ramas","unidad")
-    .when(col("ingredients_peso") == "paquetes","unidad")
-    .when(col("ingredients_peso") == "gusto","cucharadita")
-    .otherwise(col("ingredients_peso")).alias("ingredients_peso")
+    col("Receta"),
+    col("Personas"),
+    col("Ingrediente"),
+    when(
+     col("decimal")>0,(col("entero")/col("decimal"))
+                 ).otherwise(col("entero")).cast(DecimalType(10, 2)).alias("monto"),
+    col("Unidad")
 )
 
 
