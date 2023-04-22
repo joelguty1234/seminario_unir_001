@@ -45,13 +45,8 @@ async function getGenre(){
     try{
         const response = await axios.get(url);
         const $=cheerio.load(response.data)
-        //const genre = $("h1").text()
-        //const genre = $("class='fr-file'").text()
-        const genre = ($('a.fr-file').text())
-        //console.log(genre);
-
-        const recetas = $('ul li strong');
-        recetas.each(function(){
+        const canasta_v = $('ul li strong');
+        canasta_v.each(function(){
             dia = $(this).find("a.fr-file").text();
             url_lin = $(this).find("a.fr-file").attr("href");
             url_lin = base_url + url_lin
@@ -66,8 +61,6 @@ async function getGenre(){
 
         const path_url = (day_canasta[day_canasta.length - 1].dia).replaceAll(" ", "_")
         
-        //console.log(day_canasta[day_canasta.length - 1].url_lin)
-        //console.log(day_canasta[day_canasta.length - 1].dia)
         downloadFile(day_canasta[day_canasta.length - 1].url_lin, 1 ,
           path_url)
         
