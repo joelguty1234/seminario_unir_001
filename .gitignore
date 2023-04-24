@@ -106,4 +106,5 @@ dist
 
 4_etl/credenciales/
 2_recetas/run_test.js
+1_precios_canasta/src/pdfs
 *.json
