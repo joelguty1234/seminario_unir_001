@@ -8,16 +8,16 @@ Proceso para el uso inteligente de recursos gastronómicos en comedores comunita
 * `poppler gs tesseract` (para el uso de pdf-text-extract) [¿Cómo lo instalo?](https://github.com/nisaacson/pdf-extract)
 
 ### 1.2. Instalación
-* Clonar el repositorio
+#### 1.2.1. Clonar el repositorio
 ```
 git clone https://github.com/joelguty1234/seminario_unir_001.git
 ```
 
-* Instalar dependencias en cada directorio
+#### 1.2.2. Instalar dependencias en cada directorio
 ```
 npm install
 ```
-* Instalar y configurar **Apache Spark** para el proyecto `4_etl`
+#### 1.2.3. Instalar y configurar **Apache Spark** para el proyecto `4_etl`
 1.  Instala Python y Java en tu computadora.
 2.  Descarga la versión de Apache Spark que deseas instalar.
 3.  Extrae el archivo descargado de Apache Spark en tu computadora y colócalo en un directorio de tu elección.
