@@ -1,4 +1,4 @@
-# Seminario de Innovación
+# Seminario de Innovación en Inteligencia Artificial
 ## 1. Obtención de datos de precios de la canasta básica
 Proceso para el uso inteligente de recursos gastronómicos en comedores comunitarios de la **Ciudad de México** mediante modelos de Machine Learning y técnicas de recolección de datos.
 

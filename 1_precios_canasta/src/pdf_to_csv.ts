@@ -76,7 +76,7 @@ async function processFiles(directoryPath: string, files: string[]) {
         if (element.tables.slice(2).length > 0) {
           element.tables.slice(2).forEach((row: any) => {
             csv.appendToFile({
-              product: row[0],
+              product: row[0].trim().replace(/\r?\n|\r/g, ' '),
               unit: row[9].replace(/[^\w]/g, ''), // Sólo lo deja como kilogramos, litros, etc.
               minPrice: row[7].replace("$", ''),
               maxPrice: row[8].replace("$", ''),
