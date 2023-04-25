@@ -24,7 +24,14 @@ const pdfUrls: string[] = [
   '2023/Abril/13%20de%20Abril%20de%202023.pdf',
   '2023/Abril/14%20de%20Abril%20de%202023.pdf',
   '2023/Abril/15%20de%20Abril%20de%202023.pdf',
-  '2023/Abril/16%20de%20Abril%20de%202023.pdf'
+  '2023/Abril/16%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/17%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/18%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/19%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/20%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/21%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/22%20de%20Abril%20de%202023.pdf',
+  '2023/Abril/23%20de%20Abril%20de%202023.pdf'
 ];
 
 const pdfDirectory: string = path.join(__dirname, 'pdfs');
